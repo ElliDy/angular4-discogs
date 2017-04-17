@@ -8,13 +8,13 @@ Vorraussetzungen:
 
 Nun kann angular cli installiert werden:
 
-'npm install -g @angular/cli'
+`npm install -g @angular/cli`
 
 ## Erstellen eines Projekts
 
 Im nächsten Schritt wollen wir mit Hilfe von angular 2 ein Projekt erstellen. Hierbei wollen wir gleich ein routing mit erstellen und den Style auf SASS festlegen.
 
-'ng new discogs-app --routing=true --style=scss'
+`ng new discogs-app --routing=true --style=scss`
 
 Das dauert nun einen kleinen Moment, da er auch alle Abhängigkeiten mit läd.
 
@@ -36,9 +36,9 @@ Im e2e Ordner werden automatisch End-To-End-Tests generiert, die mit Hilfe von p
 Der für uns wichtige Ordner ist der src-ordner. Hier finden wir den Startpunkt jeder Webseite, die index.html. Eine zugehörige main.ts als Startpunkt für´s Scripting und die styles.scss, die den allgemeinen Style der Anwendung beschreibt. Hier benutze ich bewusst das Wort allgemein, weil jede Komponente ihren eigene Style verwalten kann, der dann auch nur in dieser Komponente vorhanden ist. Dazu aber später mehr.
 Damit wir mehrere Style-Datein anlegen können, ändern wir hier noch schnell die Konfiguration.
 
-Wir legen einen Ordner styles in src an und verschieben die Datei styles.scss dort hinein. Anschließend gehen wir in die Datei angular-cli.json, die im Root-Verzeichnis liegt, und ändern dort die Zeile 21 in '"styles/styles.scss"'. 
+Wir legen einen Ordner styles in src an und verschieben die Datei styles.scss dort hinein. Anschließend gehen wir in die Datei angular-cli.json, die im Root-Verzeichnis liegt, und ändern dort die Zeile 21 zu `"styles/styles.scss"`. 
 
-Nun können wir die Anwendung mit 'ng serve' ausgeführt im root-Ordner starten.
+Nun können wir die Anwendung mit `ng serve` ausgeführt im root-Ordner starten.
 
 Unter 'http://localhost:4200' sollte nun ein "App Works" auftauchen.
 
@@ -61,7 +61,7 @@ Die letzte generierte Datei bildet das RoutingModul, welches auch wiederum durch
 An das importierte Modul wird noch eine Konstante übergeben, welche die Konfiguration des Routings darstellt. Hierbei wird ein path und deren Kinder angegeben. Diese sind noch leer. 
 Verändern wir die Routenkonfiguration zu folgender, sollte nun auch der Pfad discogs funktionieren.
 
-''
+```
   {
     path: 'discogs',
     children: []
@@ -70,4 +70,4 @@ Verändern wir die Routenkonfiguration zu folgender, sollte nun auch der Pfad di
     redirectTo: '/discogs',
     pathMatch: 'full'
   }
-''
+```
