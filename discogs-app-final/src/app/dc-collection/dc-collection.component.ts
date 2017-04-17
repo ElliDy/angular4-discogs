@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dc-collection',
   templateUrl: './dc-collection.component.html',
-  styleUrls: ['./dc-collection.component.sass']
+  styleUrls: ['./dc-collection.component.scss']
 })
 export class DcCollectionComponent implements OnInit {
 
 	collection = [];
+	toggle = {};
 
   constructor() { 
 		this.collection = [{

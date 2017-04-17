@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dc-user',
   templateUrl: './dc-user.component.html',
-  styleUrls: ['./dc-user.component.sass']
+  styleUrls: ['./dc-user.component.scss']
 })
 export class DcUserComponent implements OnInit {
 

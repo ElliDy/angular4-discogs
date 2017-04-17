@@ -61,3 +61,40 @@ Um eine Liste in Angular zur rendern benutzt man das Attribut *ngFor.
     {{item['basic_information'].title}}
 </li>
 ```
+
+## Details einer Sammlung anzeigen
+
+Nun wollen wir Details einer Sammlung anzeigen, wenn wir auf eine Sammlung Klicken. Der Einfachheit halber werden wir dies noch nicht ins Routing integrieren, sondern über das Attribut ngIf* den jeweiligen View ausblenden.
+
+Als erstes brauchen wir eine neue Komponente.
+
+`ng generate component dc-collection-item`
+
+Diese Komponente nutzen wir als Item-Komponente und sie muss von der DcCollectionComponent Daten entgegennehmen, die sie darstellen will.
+
+Man fügt hierzu ein Attribut mit der Annotation Input der Klasse hinzu.
+
+`@Input('item') collectionItem`
+
+Nun muss diese Komponente in der Eltern-Komponente genutzt werden. Dazu fügen wir in dc-collection.component.html folgende Zeilen innerhalb unseres ListItems hinzu.
+
+```
+<span>{{i+1}}. {{item['basic_information'].title}}</span>
+<app-dc-collection-item [item]="item['basic_information']"><app-dc-collection-item>
+```
+
+Hierbei wird nun die Basisinformation als Item an unser DcCollectionItemComponent übergeben. Nun werden noch alle Informationen untereinander angezeigt.
+
+Um dies zu ändern bauen wir ein Toggle ein.
+
+```
+<span *ngIf="!toggle[i+'item']" (click)="toggle[i+'item']=!toggle[i+'item']">
+    {{i+1}}. {{item['basic_information'].title}}
+</span>
+<app-dc-collection-item (click)="toggle[i+'item']=!toggle[i+'item']" 
+    *ngIf="toggle[i+'item']" [item]="item['basic_information']"></app-dc-collection-item>
+```
+
+Wenn auf eines der beiden Items (Titel aus der Übersicht oder Detailinformationen) geklickt wird, wird das Toggle-Item, welches an ein Attribut gebunden ist, welches wir vorher noch in der Klasse initialisieren müssen (`toggle = {};`), invertiert. Dadurch kann im *ngIf genau dieses Toggle abgefragt werden und somit nur eine der beiden Informationen angezeigt werden.
+
+## Eine Funktion als Output übergeben
