@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dc-collection-item',
@@ -8,9 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DcCollectionItemComponent implements OnInit {
 
 	@Input('item') collectionItem
+	@Input('index') collectionIndex
+	@Output() closeRequest = new EventEmitter();
 
   constructor() { 
-  		console.log(this.collectionItem)
+  }
+
+  closeItem(){
+  	this.closeRequest.emit(this.collectionIndex);
   }
 
   ngOnInit() {

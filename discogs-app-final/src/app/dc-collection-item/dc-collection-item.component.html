@@ -1,4 +1,4 @@
-<h3>{{collectionItem.title}}</h3>
+<h3>{{collectionItem.title}}<span (click)="closeItem()" class="closeButton">x</span></h3>
 <h4>Labels</h4>
 <ul>
 	<li *ngFor="let label of collectionItem.labels;">

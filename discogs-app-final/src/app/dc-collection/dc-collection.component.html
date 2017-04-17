@@ -6,7 +6,7 @@ Sammlungen von soulunit
     	<span *ngIf="!toggle[i+'item']" (click)="toggle[i+'item']=!toggle[i+'item']">
     		{{i+1}}. {{item['basic_information'].title}}
     	</span>
-    	<app-dc-collection-item (click)="toggle[i+'item']=!toggle[i+'item']" 
+    	<app-dc-collection-item [index]="i" (closeRequest)="closeItem($event)"
     		*ngIf="toggle[i+'item']" [item]="item['basic_information']"></app-dc-collection-item>
 	</li>
 </ul>

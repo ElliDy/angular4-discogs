@@ -98,3 +98,44 @@ Um dies zu ändern bauen wir ein Toggle ein.
 Wenn auf eines der beiden Items (Titel aus der Übersicht oder Detailinformationen) geklickt wird, wird das Toggle-Item, welches an ein Attribut gebunden ist, welches wir vorher noch in der Klasse initialisieren müssen (`toggle = {};`), invertiert. Dadurch kann im *ngIf genau dieses Toggle abgefragt werden und somit nur eine der beiden Informationen angezeigt werden.
 
 ## Eine Funktion als Output übergeben
+
+Nun wäre es noch ganz schön, wenn wir beim Schließen der Details nicht immer auf den gesamten Eintrag klicken müssen, sondern noch einen Schließen-Button hätten. Folglich wird die Schließen-Aktion in unserer DcCollectionItemComponent getriggert, aber verändern müssen wir dann das Toggle-Objekt der DcCollectionComponent. Um dies zu realisieren wird in Angular die Output-Annotation verwendet. Hierbei wird ein EventEmitter erzeugt, auf dem dann bei einem Click ein emit mit dem Index ausgeführt wird.
+Die übergebene Funktion erhält das Emit-Event und wird in der Elternkomponente ausgeführt.
+
+Konkret sieht das in der DcCollectionItemComponent dann so aus.
+
+```
+Komponente:
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-dc-collection-item',
+  templateUrl: './dc-collection-item.component.html',
+  styleUrls: ['./dc-collection-item.component.scss']
+})
+export class DcCollectionItemComponent implements OnInit {
+
+    @Input('item') collectionItem
+    @Input('index') collectionIndex
+    @Output() closeRequest = new EventEmitter();
+
+    closeItem(){
+        this.closeRequest.emit(this.collectionIndex);
+    }
+}
+
+Template:
+<span (click)="closeItem()" class="closeButton">x</span>
+```
+
+Und in der DcCollectionComponent muss folgendes hinzugefügt werden:
+
+```
+Komponente:
+closeItem = function(index){
+    this.toggle[index+'item'] = !this.toggle[index+'item']
+}
+Template:
+<app-dc-collection-item [index]="i" (closeRequest)="closeItem($event)"
+    *ngIf="toggle[i+'item']" [item]="item['basic_information']"></app-dc-collection-item>
+```

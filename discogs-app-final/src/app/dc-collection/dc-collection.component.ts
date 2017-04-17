@@ -10,6 +10,10 @@ export class DcCollectionComponent implements OnInit {
 	collection = [];
 	toggle = {};
 
+	closeItem = function(index){
+		this.toggle[index+'item'] = !this.toggle[index+'item']
+	}
+
   constructor() { 
 		this.collection = [{
 			collection_id: 26193956,
