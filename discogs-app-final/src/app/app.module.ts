@@ -5,10 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DcUserComponent } from './dc-user/dc-user.component';
+import { DcCollectionComponent } from './dc-collection/dc-collection.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DcUserComponent,
+    DcCollectionComponent
   ],
   imports: [
     BrowserModule,
