@@ -16,7 +16,7 @@ Innerhalb der Komponente können wir nun ein Attribute userInfo anlegen und dies
 
 Im Template kann jetzt auf beliebige Felder zugegriffen werden. Ein Beispiel, wie das Template aussehen könnte, ist folgendes:
 
-``
+```
 <h2>{{userInfo.username}}</h2>
 <p>
   Rang: {{userInfo.rank}}
@@ -25,16 +25,16 @@ Im Template kann jetzt auf beliebige Felder zugegriffen werden. Ein Beispiel, wi
   Homepage: <a href="{{userInfo.homepage}}">{{userInfo.homepage}}</a>
 </p>
 <img height="200" width="200" src="{{userInfo.avatar_url}}"> 
-``
+```
 
 Nun müssen wir noch zu der Komponente navigieren können. Hierzu fügen wir einen neuen Pfad in unserem Routing-Modul ein.
 
-``
+```
     {
         path: 'user/soulunit',
         component: DcUserComponent 
     }
-``
+```
 
 Dieser verweist auf unsere Komponente. Hierbei ist es wichtig, dass diese Komponente auch importiert wird.
 
@@ -42,13 +42,13 @@ Dieser verweist auf unsere Komponente. Hierbei ist es wichtig, dass diese Kompon
 
 Nun müssen wir an der Stelle, wo der Inhalt der gerouteten Komponenten dargestellt wird, noch eine Navigation einfügen. Diese könnte innerhalb der app.component.html so aussehen.
 
-``
+```
 <nav>
     <a routerLink="/discogs" routerLinkActive="active">Home</a>
     <a routerLink="/user/soulunit" routerLinkActive="active">User SoulUnit</a>
 </nav>
 <router-outlet></router-outlet>
-``
+```
 
 ## Liste der Sammlungen eines Nutzer
 
