@@ -3,11 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+
+// modules
+import { HomeModule } from './modules/home/home.module';
+
+// components
 import { AppComponent } from './app.component';
-import { DcUserComponent } from './dc-user/dc-user.component';
 import { DcCollectionComponent } from './dc-collection/dc-collection.component';
 import { DcCollectionItemComponent } from './dc-collection-item/dc-collection-item.component';
+import { DcUserComponent } from './dc-user/dc-user.component';
+
+// routing
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +28,13 @@ import { DcCollectionItemComponent } from './dc-collection-item/dc-collection-it
     BrowserModule,
     FormsModule,
     HttpModule,
+    CoreModule,
+    HomeModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

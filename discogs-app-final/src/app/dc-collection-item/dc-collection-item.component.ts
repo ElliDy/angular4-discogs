@@ -7,18 +7,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class DcCollectionItemComponent implements OnInit {
 
-	@Input('item') collectionItem
-	@Input('index') collectionIndex
+	@Input('item') collectionItem;
+	@Input('index') collectionIndex;
 	@Output() closeRequest = new EventEmitter();
 
-  constructor() { 
-  }
+  constructor() {}
 
   closeItem(){
   	this.closeRequest.emit(this.collectionIndex);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
