@@ -4,13 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
 
-import { AppRoutingModule } from './app-routing.module';
+// modules
+import { HomeModule } from './modules/home/home.module';
+
+// components
 import { AppComponent } from './app.component';
-import { DcUserComponent } from './dc-user/dc-user.component';
 import { DcCollectionComponent } from './dc-collection/dc-collection.component';
 import { DcCollectionItemComponent } from './dc-collection-item/dc-collection-item.component';
+import { DcUserComponent } from './dc-user/dc-user.component';
+
+// routing
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,7 @@ import { DcCollectionItemComponent } from './dc-collection-item/dc-collection-it
     FormsModule,
     HttpModule,
     CoreModule,
-    SharedModule,
+    HomeModule,
     AppRoutingModule
   ],
   providers: [],
