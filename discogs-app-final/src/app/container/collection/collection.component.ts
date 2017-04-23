@@ -15,26 +15,7 @@ export class CollectionComponent implements OnInit {
   constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    // this.collection = [
-    //   {
-    //     basic_information: {
-    //       title: 'Tragedies Of A Plastic Soul Junkie',
-    //       artists: [
-    //         {
-    //           name: 'Terrence Parker'
-    //         }
-    //       ],
-    //       labels: [
-    //         {
-    //           name: '!K7 Records',
-    //           catno: 'K7R007LP',
-    //           entity_type_name: 'Label'
-    //         }
-    //       ]
-    //     }
-    //   }
-    // ]
-    this.dataService.getReleases()
+    this.dataService.getCollection()
       .subscribe(collection => {
         this.collection = collection;
       });
