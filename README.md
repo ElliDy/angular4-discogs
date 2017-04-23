@@ -4,4 +4,4 @@ Willkommen im Tutorial für Angular 4. Es soll hier darum gehen, dir einen Über
 
 1. [First Steps](https://github.com/ElliDy/angular4-discogs/blob/master/01%20First%20steps.md)
 2. [Erstellen von Komponenten](https://github.com/ElliDy/angular4-discogs/blob/master/02%20Erstellen%20von%20Komponenten.md)
-3. [Erstellen von Modulen und Services](https://github.com/ElliDy/angular4-discogs/blob/master/03-Module_und_Services.md)
+3. [Module und Services](https://github.com/ElliDy/angular4-discogs/blob/master/03-Module_und_Services.md)
