@@ -1,20 +1,5 @@
 {
-  "users": [
-    ""
-  ],
-  "collection": {
-    "pagination": {
-      "per_page": 50,
-      "items": 400,
-      "page": 1,
-      "urls": {
-        "last": "https://api.discogs.com/users/soulunit/collection?per_page=50&page=8",
-        "next": "https://api.discogs.com/users/soulunit/collection?per_page=50&page=2"
-      },
-      "pages": 8
-    }
-  },
-  "releases": [
+  "collection": [
     {
       "collection_id": 26193956,
       "release_id": 29808,

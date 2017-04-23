@@ -1,6 +1,11 @@
-<div class="container-fluid">
-  <h1>Discogs App</h1>
-  <app-nav></app-nav>
+<div class="container">
+  <h1>App</h1>
+  <nav class="nav">
+    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a class="nav-link" routerLink="/user" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">User</a>
+    <a class="nav-link" routerLink="/collection" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Collection</a>
+  </nav>
   <router-outlet></router-outlet>
 </div>
+
 

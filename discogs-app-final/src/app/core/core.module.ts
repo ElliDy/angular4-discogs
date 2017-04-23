@@ -1,24 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 // services
 import { DataService } from './services/data.service';
 
-// components
-import { NavComponent } from './components/nav/nav.component';
-
 @NgModule({
   imports: [
     CommonModule,
+    HttpModule,
     RouterModule
   ],
-  declarations: [
-    NavComponent
-  ],
-  exports: [
-    NavComponent
-  ],
+  declarations: [],
+  exports: [],
   providers: [
     DataService
   ]

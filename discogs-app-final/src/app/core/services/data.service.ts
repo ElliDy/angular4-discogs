@@ -12,7 +12,7 @@ export class DataService {
   constructor(private http: Http) {}
 
   getReleases(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/api/collection/releases`)
+    return this.http.get(`${this.baseUrl}/api/collection`)
       .map((response: Response) => {
         return response.json();
       })

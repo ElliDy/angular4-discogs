@@ -14,13 +14,13 @@ Nun kann angular cli installiert werden:
 
 Im nächsten Schritt wollen wir mit Hilfe von angular 2 ein Projekt erstellen. Hierbei wollen wir gleich ein routing mit erstellen und den Style auf SASS festlegen.
 
-`ng new discogs-app --routing=true --style=scss`
+`ng new workshop --routing true --style scss`
 
 Das dauert nun einen kleinen Moment, da er auch alle Abhängigkeiten mit läd.
 
 Nun haben wir ein Projekt mit folgender Projekt Struktur
 
-* discogs-app
+* workshop
 	* e2e
 	* src
 		* app
@@ -53,21 +53,16 @@ Beginnen wir mit dem Modul. Hier sieht man in der Strukutr eine Klasse AppModule
 
 Die Komponente ist genauso eine Klasse wie das Modul, wird aber mit einer anderen Annotation versehen. Auch hier werden der Annotation Eigenschaften übergeben. In diesem Fall ein selector, der den Tag für das HTML spezifiziert, und ein templateUrl, die das Template, welches durch diese Komponente gerendert werden soll, angibt. Weiterhin können noch style urls festgelegt werden. Wie schon vorhin erwähnt, gelten diese Styles nur für die Komponente.
 
-Ein kleines Beispiel dazu. Fügen wir in der index.html eine Überschrift "Discogs App" ein und setzen in der app.component.scss einen Style, der die Schriftfarbe eines h1-Elements auf bspw. Grün setzt. Nun sollte nur die Überschrift der Komponente diese Schriftfarbe annehmen, nicht aber die außerhalb unserer Anwendung.
+Ein kleines Beispiel dazu. Fügen wir in der app.component.html eine Überschrift "App" ein und setzen in der app.component.scss einen Style, der die Schriftfarbe eines h1-Elements auf bspw. Grün setzt. Nun sollte nur die Überschrift der Komponente diese Schriftfarbe annehmen, nicht aber die außerhalb unserer Anwendung.
 
 ### Routing
 
 Die letzte generierte Datei bildet das RoutingModul, welches auch wiederum durch ein NgModule-Annotation gekennzeichnet ist. Auch dieses importiert bzw. exportiert ein RouterModule, welches das Angular Routing ermöglicht.
-An das importierte Modul wird noch eine Konstante übergeben, welche die Konfiguration des Routings darstellt. Hierbei wird ein path und deren Kinder angegeben. Diese sind noch leer. 
-Verändern wir die Routenkonfiguration zu folgender, sollte nun auch der Pfad discogs funktionieren.
+An das importierte Modul wird noch eine Konstante übergeben, welche die Konfiguration des Routings darstellt.
 
 ```
-  {
-    path: 'discogs',
-    children: []
-  },
-  { path: '',
-    redirectTo: '/discogs',
-    pathMatch: 'full'
-  }
+{
+  path: '',
+  children: []
+}
 ```

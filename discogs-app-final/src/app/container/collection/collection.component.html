@@ -1,0 +1,17 @@
+<ul class="list-unstyled">
+  <li class="p-1" *ngFor="let item of collection; let i = index">
+    <button
+      type="button"
+      *ngIf="!toggle[i + 'item']"
+      class="btn btn-primary"
+      (click)="toggle[i + 'item']=!toggle[i+'item']" >
+      {{ i + 1 }}. {{ item['basic_information'].title }}
+    </button>
+    <app-collection-item
+      *ngIf="toggle[i + 'item']"
+      [collectionItem]="item['basic_information']"
+      [collectionIndex]="i"
+      (closeRequest)="closeItem($event)">
+    </app-collection-item>
+  </li>
+</ul>
