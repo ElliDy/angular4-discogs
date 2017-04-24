@@ -1,18 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { CoreModule } from './core/core.module';
-
-// modules
-import { HomeModule } from './modules/home/home.module';
+import { SharedModule } from './shared/shared.module';
 
 // components
 import { AppComponent } from './app.component';
-import { DcCollectionComponent } from './dc-collection/dc-collection.component';
-import { DcCollectionItemComponent } from './dc-collection-item/dc-collection-item.component';
-import { DcUserComponent } from './dc-user/dc-user.component';
+import { HomeComponent } from './container/home/home.component';
+import { CollectionComponent } from './container/collection/collection.component';
+import { CollectionItemComponent } from './container/collection/components/collection-item/collection-item.component';
+import { UserComponent } from './container/user/user.component';
 
 // routing
 import { AppRoutingModule } from './app-routing.module';
@@ -20,16 +18,16 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    DcUserComponent,
-    DcCollectionComponent,
-    DcCollectionItemComponent
+    HomeComponent,
+    UserComponent,
+    CollectionComponent,
+    CollectionItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     CoreModule,
-    HomeModule,
+    SharedModule,
     AppRoutingModule
   ],
   providers: [],

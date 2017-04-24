@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DcUserComponent } from './dc-user/dc-user.component';
-import { DcCollectionComponent } from './dc-collection/dc-collection.component';
+import { HomeComponent } from './container/home/home.component'
+import { UserComponent } from './container/user/user.component';
+import { CollectionComponent } from './container/collection/collection.component';
 
 const routes: Routes = [
   {
@@ -11,12 +12,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'user/soulunit',
-    component: DcUserComponent
+    path: 'home',
+    component: HomeComponent
   },
   {
-    path: 'user/soulunit/collection',
-    component: DcCollectionComponent
+    path: 'user',
+    component: UserComponent
+  },
+  {
+    path: 'collection',
+    component: CollectionComponent
   }
 ];
 
