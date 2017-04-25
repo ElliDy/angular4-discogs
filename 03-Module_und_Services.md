@@ -51,7 +51,7 @@ Service im CoreModule importieren und registrieren.
 ```
 import { DataService } from './services/data.service';
 
-provide: [
+providers: [
     DataService
 ]
 ```
