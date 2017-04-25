@@ -252,8 +252,6 @@ Und in der CollectionComponent wie folgt:
 Komponente:
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from '../../core/services/data.service';
-
 @Component({
     selector: 'app-collection',
     templateUrl: './collection.component.html',
@@ -267,10 +265,25 @@ export class CollectionComponent implements OnInit {
     constructor(private dataService: DataService) {}
 
     ngOnInit() {
-        this.dataService.getReleases()
-        .subscribe(collection => {
-            this.collection = collection;
-        });
+  	this.collection = [
+	    {
+	      basic_information: {
+		title: 'Tragedies Of A Plastic Soul Junkie',
+		artists: [
+		  {
+		    name: 'Terrence Parker'
+		  }
+		],
+		labels: [
+		  {
+		    name: '!K7 Records',
+		    catno: 'K7R007LP',
+		    entity_type_name: 'Label'
+		  }
+		]
+	      }
+	    }
+	]
     }
 
     closeItem(index){
